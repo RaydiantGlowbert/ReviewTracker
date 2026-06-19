@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Gurus — Review Season 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: white;
+      padding: 36px 24px 56px;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      background: linear-gradient(90deg, #f9ca24, #f0932b, #ffeaa7, #f9ca24);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: goldShimmer 4s linear infinite;
+    }
+
+    @keyframes goldShimmer {
+      0%   { background-position: 0% }
+      100% { background-position: 200% }
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      opacity: 0.65;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Team progress bar ── */
+    .team-bar-wrap {
+      max-width: 700px;
+      margin: 0 auto 44px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(249,202,36,0.2);
+      border-radius: 22px;
+      padding: 22px 28px;
+    }
+
+    .team-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .team-bar-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f9ca24;
+      opacity: 0.85;
+    }
+
+    .team-bar-count {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+
+    .team-bar-count span {
+      font-size: 0.88rem;
+      font-weight: 400;
+      opacity: 0.45;
+    }
+
+    .team-bar-track {
+      width: 100%;
+      height: 24px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .team-bar-fill {
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #f9ca24, #f0932b, #ffeaa7, #f9ca24);
+      background-size: 200%;
+      animation: goldShimmer 3s linear infinite;
+      transition: width 0.9s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+
+    .team-bar-pct {
+      text-align: right;
+      font-size: 0.78rem;
+      opacity: 0.45;
+      font-weight: 700;
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px 24px;
+      max-width: 860px;
+      margin: 0 auto 56px;
+    }
+
+    /* ── Card ── */
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .person-name {
+      font-size: 1.1rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 0.01em;
+      background: linear-gradient(135deg, #fff 50%, rgba(255,255,255,0.65));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .team-name {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-align: center;
+      color: #f9ca24;
+      opacity: 0.8;
+      letter-spacing: 0.03em;
+      margin-top: -4px;
+    }
+
+    /* ── Thermometer ── */
+    .thermo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 4px 0;
+    }
+
+    .tube {
+      width: 36px;
+      height: 220px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 18px 18px 0 0;
+      border: 2px solid rgba(255,255,255,0.15);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    /* Tick marks */
+    .tube::before {
+      content: '';
+      position: absolute;
+      top: 0; right: -9px;
+      width: 6px; height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 23%,
+        rgba(255,255,255,0.22) 23%,
+        rgba(255,255,255,0.22) 25%,
+        rgba(255,255,255,0) 25%,
+        rgba(255,255,255,0) 48%,
+        rgba(255,255,255,0.1) 48%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0) 50%
+      );
+    }
+
+    .fill {
+      width: 100%;
+      height: 0%;
+      border-radius: 16px 16px 0 0;
+      transition: height 0.9s cubic-bezier(0.34, 1.4, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fill::after {
+      content: '';
+      position: absolute;
+      top: 8px; left: 5px;
+      width: 6px; height: 30%;
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+    }
+
+    /* ── Bulb ── */
+    .bulb {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.2);
+      margin-top: -2px;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 16px rgba(0,0,0,0.4);
+    }
+
+    .bulb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Fallback color shown if image fails */
+    .bulb.no-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .count-display {
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .pct-display {
+      font-size: 0.72rem;
+      opacity: 0.45;
+      font-weight: 700;
+    }
+
+    .card.done .count-display { font-size: 1.6rem; }
+
+    /* ── Update panel ── */
+    .update-panel {
+      max-width: 380px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(249,202,36,0.15);
+      border-radius: 24px;
+      padding: 28px 28px 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .update-panel h2 {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      opacity: 0.88;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px 36px 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.07);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    select option { background: #16213e; color: white; }
+    select:focus  { border-color: rgba(249,202,36,0.4); }
+
+    .counter-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+
+    .step-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+    }
+    .step-btn:hover    { background: rgba(255,255,255,0.18); }
+    .step-btn:active   { transform: scale(0.92); }
+    .step-btn:disabled { opacity: 0.22; cursor: not-allowed; }
+
+    .count-value {
+      font-size: 2.6rem;
+      font-weight: 900;
+      min-width: 64px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .of-total {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      background: linear-gradient(90deg, #f9ca24, #f0932b);
+      color: #1a1a2e;
+      letter-spacing: 0.03em;
+    }
+    .save-btn:hover    { opacity: 0.88; }
+    .save-btn:active   { transform: scale(0.98); }
+    .save-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    .status-msg {
+      text-align: center;
+      margin-top: 13px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0.7;
+      min-height: 22px;
+    }
+
+    /* ── Config notice ── */
+    .config-notice {
+      background: rgba(255, 210, 0, 0.1);
+      border: 1px solid rgba(255, 210, 0, 0.3);
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin: 0 auto 32px;
+      max-width: 640px;
+      font-size: 0.83rem;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #ffeaa7;
+    }
+    .config-notice code {
+      background: rgba(0,0,0,0.3);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-family: monospace;
+    }
+
+    /* ── Confetti ── */
+    #confetti-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      h1    { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="header">
+  <h1>✨ Golden Gurus ✨</h1>
+  <p class="subtitle">Review Season 2026 — we're in this together! 💛</p>
+</div>
+
+<div class="team-bar-wrap">
+  <div class="team-bar-header">
+    <div class="team-bar-label">💛 Our Collective Progress</div>
+    <div class="team-bar-count" id="teamCount">0 <span>/ 126 reviews</span></div>
+  </div>
+  <div class="team-bar-track">
+    <div class="team-bar-fill" id="teamFill" style="width:0%"></div>
+  </div>
+  <div class="team-bar-pct" id="teamPct">0% complete — keep going!</div>
+</div>
+
+<div class="config-notice" id="configNotice">
+  ⚠️ <strong>Firebase setup needed.</strong> Find the block marked <code>REPLACE THIS CONFIG</code> in this file and paste in your Firebase credentials.
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="update-panel">
+  <h2>✏️ Update your progress</h2>
+  <select id="nameSelect">
+    <option value="">— Select your name —</option>
+  </select>
+  <div class="counter-row">
+    <button class="step-btn" id="minusBtn" disabled>−</button>
+    <div class="count-value" id="countValue">—</div>
+    <button class="step-btn" id="plusBtn" disabled>＋</button>
+  </div>
+  <div class="of-total" id="ofTotal"></div>
+  <button class="save-btn" id="saveBtn" disabled>Save Progress 💛</button>
+  <div class="status-msg" id="statusMsg"></div>
+</div>
+
+<script type="module">
+  import { initializeApp }   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, onValue, set, get }
+                             from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+  // ================================================================
+  // REPLACE THIS CONFIG with your Firebase project credentials.
+  // ================================================================
+  const firebaseConfig = {
+    apiKey:            "AIzaSyCm1neCC81tLmzHXon1FHaY8Bebk33Bd00",
+    authDomain:        "review-tracker-d516f.firebaseapp.com",
+    databaseURL:       "https://review-tracker-d516f-default-rtdb.firebaseio.com",
+    projectId:         "review-tracker-d516f",
+    storageBucket:     "review-tracker-d516f.firebasestorage.app",
+    messagingSenderId: "858511105344",
+    appId:             "1:858511105344:web:af2a4d637b8c124fb46ea5"
+  };
+  // ================================================================
+
+  const TEAM = [
+    { name: "Devin",    team: "Team Swoosh",        total: 18, color: "#FF6B6B", img: "devin.png"   },
+    { name: "Chrissy",  team: "Owl Stars",           total: 18, color: "#4ECDC4", img: "chrissy.png" },
+    { name: "Julia",    team: "ChatWinners",         total: 18, color: "#74B9FF", img: "julia.png"   },
+    { name: "Tara",     team: "Taranados",           total: 17, color: "#A29BFE", img: "tara.png"    },
+    { name: "Lisa Jo",  team: "Moore to the Story",  total: 17, color: "#FD79A8", img: "lisajo.png"  },
+    { name: "Lisa Ray", team: "Team Raydiant",       total: 16, color: "#FDCB6E", img: "lisaray.png" },
+    { name: "Lori",     team: "MoMentors",           total: 15, color: "#55EFC4", img: "lori.png"    },
+    { name: "Tricia",   team: "Golden Gurus",        total:  7, color: "#f9ca24", img: "tricia.png"  },
+  ];
+
+  const TEAM_TOTAL = TEAM.reduce((sum, p) => sum + p.total, 0);
+  const key = n => n.replace(/\s+/g, "-");
+
+  // Hide config notice if credentials are real
+  if (!firebaseConfig.apiKey.startsWith("REPLACE")) {
+    document.getElementById("configNotice").style.display = "none";
+  }
+
+  // ── Build cards ────────────────────────────────────────────────
+  const grid       = document.getElementById("grid");
+  const nameSelect = document.getElementById("nameSelect");
+
+  TEAM.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.id = `card-${key(p.name)}`;
+    card.innerHTML = `
+      <div class="person-name">${p.name}</div>
+      <div class="team-name">${p.team}</div>
+      <div class="thermo-wrap">
+        <div class="tube">
+          <div class="fill" id="fill-${key(p.name)}" style="background:${p.color}"></div>
+        </div>
+        <div class="bulb" id="bulb-${key(p.name)}" style="background:${p.color}">
+          <img src="${p.img}" alt="${p.team}"
+               onerror="this.parentElement.classList.add('no-img'); this.remove();">
+        </div>
+      </div>
+      <div class="count-display" id="cnt-${key(p.name)}">0/${p.total}</div>
+      <div class="pct-display"   id="pct-${key(p.name)}">0%</div>
+    `;
+    grid.appendChild(card);
+
+    const opt = document.createElement("option");
+    opt.value = p.name;
+    opt.textContent = `${p.name} (${p.team})`;
+    nameSelect.appendChild(opt);
+  });
+
+  // ── Update helpers ─────────────────────────────────────────────
+  function updateTeamBar(data) {
+    const done = TEAM.reduce((sum, p) => sum + (data[key(p.name)] || 0), 0);
+    const pct  = Math.round((done / TEAM_TOTAL) * 100);
+    document.getElementById("teamCount").innerHTML = `${done} <span>/ ${TEAM_TOTAL} reviews</span>`;
+    document.getElementById("teamFill").style.width = pct + "%";
+    const msg = pct === 100
+      ? "100% — Golden Gurus DONE! 🏆"
+      : `${pct}% complete — keep going!`;
+    document.getElementById("teamPct").textContent = msg;
+  }
+
+  function updateCard(name, completed) {
+    const p    = TEAM.find(t => t.name === name);
+    if (!p) return;
+    const k    = key(p.name);
+    const done = completed >= p.total;
+    const pct  = Math.min(100, Math.round((completed / p.total) * 100));
+
+    document.getElementById(`fill-${k}`).style.height = pct + "%";
+    document.getElementById(`cnt-${k}`).innerHTML = done ? "✅" : `${completed}/${p.total}`;
+    document.getElementById(`pct-${k}`).textContent = pct + "%";
+    document.getElementById(`card-${k}`).classList.toggle("done", done);
+  }
+
+  // ── Firebase ───────────────────────────────────────────────────
+  let db = null;
+  const configured = !firebaseConfig.apiKey.startsWith("REPLACE");
+
+  if (configured) {
+    try {
+      const app = initializeApp(firebaseConfig);
+      db = getDatabase(app);
+      onValue(ref(db, "progress"), snap => {
+        const data = snap.val() || {};
+        TEAM.forEach(p => updateCard(p.name, data[key(p.name)] || 0));
+        updateTeamBar(data);
+      });
+    } catch(e) {
+      console.error("Firebase error:", e);
+    }
+  } else {
+    TEAM.forEach(p => updateCard(p.name, 0));
+    updateTeamBar({});
+  }
+
+  // ── Update panel ───────────────────────────────────────────────
+  let selectedCount = 0;
+  const countValueEl = document.getElementById("countValue");
+  const ofTotalEl    = document.getElementById("ofTotal");
+  const statusMsgEl  = document.getElementById("statusMsg");
+  const minusBtn     = document.getElementById("minusBtn");
+  const plusBtn      = document.getElementById("plusBtn");
+  const saveBtn      = document.getElementById("saveBtn");
+
+  function setStatus(msg, autoClear = true) {
+    statusMsgEl.textContent = msg;
+    if (autoClear) setTimeout(() => statusMsgEl.textContent = "", 3500);
+  }
+
+  function refreshButtons() {
+    const p = TEAM.find(t => t.name === nameSelect.value);
+    if (!p) return;
+    minusBtn.disabled        = selectedCount <= 0;
+    plusBtn.disabled         = selectedCount >= p.total;
+    countValueEl.textContent = selectedCount;
+    ofTotalEl.textContent    = `out of ${p.total}`;
+  }
+
+  nameSelect.addEventListener("change", async () => {
+    const name = nameSelect.value;
+    if (!name) return;
+    const p = TEAM.find(t => t.name === name);
+    minusBtn.disabled = false;
+    plusBtn.disabled  = false;
+    saveBtn.disabled  = !configured;
+
+    if (configured && db) {
+      const snap = await get(ref(db, `progress/${key(name)}`));
+      selectedCount = snap.val() || 0;
+    } else {
+      selectedCount = 0;
+      setStatus("⚠️ Firebase not configured yet.", false);
+    }
+    countValueEl.textContent = selectedCount;
+    ofTotalEl.textContent    = `out of ${p.total}`;
+    refreshButtons();
+  });
+
+  minusBtn.addEventListener("click", () => {
+    if (selectedCount > 0) { selectedCount--; refreshButtons(); }
+  });
+
+  plusBtn.addEventListener("click", () => {
+    const p = TEAM.find(t => t.name === nameSelect.value);
+    if (p && selectedCount < p.total) { selectedCount++; refreshButtons(); }
+  });
+
+  saveBtn.addEventListener("click", async () => {
+    const name = nameSelect.value;
+    if (!name) { setStatus("Please select your name first."); return; }
+    if (!db)   { setStatus("Firebase not configured yet."); return; }
+
+    saveBtn.disabled     = true;
+    saveBtn.textContent  = "Saving…";
+
+    try {
+      await set(ref(db, `progress/${key(name)}`), selectedCount);
+      const p    = TEAM.find(t => t.name === name);
+      const left = p.total - selectedCount;
+      if (selectedCount >= p.total) {
+        setStatus("🎉 You finished ALL your reviews! Amazing!");
+        launchConfetti(p.color);
+      } else {
+        setStatus(`✓ Saved! ${left} review${left !== 1 ? "s" : ""} to go — you've got this! 💛`);
+      }
+    } catch(e) {
+      setStatus("❌ Save failed — check your Firebase rules.");
+      console.error(e);
+    }
+
+    saveBtn.disabled    = false;
+    saveBtn.textContent = "Save Progress 💛";
+  });
+
+  // ── Confetti ───────────────────────────────────────────────────
+  function launchConfetti(baseColor) {
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx    = canvas.getContext("2d");
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colors = [baseColor, "#f9ca24", "#ffeaa7", "#f0932b", "#ffffff", "#fd79a8"];
+    const pieces = Array.from({ length: 180 }, () => ({
+      x:         Math.random() * canvas.width,
+      y:         -10 - Math.random() * 200,
+      r:         4 + Math.random() * 6,
+      d:         1.5 + Math.random() * 2.5,
+      color:     colors[Math.floor(Math.random() * colors.length)],
+      angle:     0,
+      tiltSpeed: 0.05 + Math.random() * 0.1,
+    }));
+
+    let frame = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach(p => {
+        p.angle += p.tiltSpeed;
+        p.y += p.d;
+        p.x += Math.sin(p.angle) * 1.2;
+        const tilt = Math.sin(p.angle) * 12;
+        ctx.beginPath();
+        ctx.ellipse(p.x, p.y, p.r, p.r * 0.4, tilt, 0, Math.PI * 2);
+        ctx.fillStyle    = p.color;
+        ctx.globalAlpha  = Math.max(0, 1 - frame / 230);
+        ctx.fill();
+      });
+      frame++;
+      if (frame < 250) requestAnimationFrame(draw);
+      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    draw();
+  }
+</script>
+</body>
+</html>
